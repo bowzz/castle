@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  #navbar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color:  darkseagreen;
+    position: fixed;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4)
+  }
+  
+  .nav-list {
+      color: white;
+    display: flex;
+    list-style-type: none;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  
+  .nav-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+    text-decoration: none;
+
+  }
+  .hover:hover {
+    display: flex;
+    list-style-type: none;
+    font-size: 2rem;
+    font-weight: 400;
+    background-color: gray;
+  }
+  
+  #welcome-section {
+    display: flex;
+      font-family: Impact, Charcoal, sans-serif;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-color: forestgreen;
+  }
+  
+  h1, h3 {
+    font-size: 5rem;
+    color: #fff;
+  }
+  
+    #projects {
+    background-color: lightgray;
+    font-size: 1.5rem;
+    color: lightgreen;
+    }
+#projects h1 {
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  padding: 1rem;
+}
+
+
+  #project-list {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: lightgray;
+    text-align: center;
+  }
+
+  figure > img {
+    max-height: 250px;
+  }
+
+  figcaption {
+
+    color: #fff;
+    font: 1rem "Roboto", sans-serif;
+    background-color: rgba(5, 121, 5, 0.329);
+    position: relative; 
+    bottom: 20px;
+    height: 40px;
+
+  }
+
+  #contact {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    flex-wrap: wrap;
+    background-color: lightgray;
+    box-sizing: content-box;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  #contact a {
+    margin: 1rem;
+  }
+  
+  i {
+    font-size: 2rem;
+    
+  }
+
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 60px;
+    background-color:darkseagreen;
+    color: white;
+  }
+  
+  /* 1200px / 16px = 75em */
+  @media (max-width: 100em) {
+    html {
+      font-size: 60%;
+    }
+  }
+  
+  /* 980px / 16px = 61.25em */
+  @media (max-width: 61.25em) {
+    html {
+      font-size: 58%;
+    }
+  }
+  
+  /* 460px / 16px = 28.75em */
+  @media (max-width: 28.75em) {
+    html {
+      font-size: 50%;
+    }
+  }
