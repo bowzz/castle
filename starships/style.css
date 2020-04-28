@@ -2,13 +2,30 @@
  box-sizing: content-box;
 }
 
+header,footer {
+    display: flex;
+    justify-content: center;
+    color: #bbbbbb;
+
+}
+
+
 .container {
     display: flex;
 }
 
+.shipView {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
 .nav {
-    border: solid 2px black;
-    padding-right: 1rem;
+    border: solid 2px blue;
+    padding: 1rem;
+    background-color: #333333;
 }
 
 

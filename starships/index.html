@@ -5,20 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starships</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
+    <header class="is-size-1">
         <h1>The Starships of Star Wars </h1>
     </header>
+    <!-- Brought in bulma-->
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="dialogMessage is-size-2">
+                    </h2>
+                </div>
+            </div>
+
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!--End  bulma-->
     <div class="container">
         <nav class="nav">
             <ul class="navList">
             </ul>
         </nav>
         <main id="main">
-          
+<div class="shipView">
+    
+</div>
         </main>
     </div>
     <footer>
