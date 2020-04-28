@@ -1,0 +1,22 @@
+:root {
+ box-sizing: content-box;
+}
+
+.container {
+    display: flex;
+}
+
+.nav {
+    border: solid 2px black;
+    padding-right: 1rem;
+}
+
+
+a {
+text-decoration: none;
+font-size: 1.25 rem;
+}
+
+li {
+list-style-type: none;
+}

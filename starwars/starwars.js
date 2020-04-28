@@ -1,5 +1,6 @@
 import { films } from '../data/films.js'
 import { people } from '../data/people.js'
+import { removeChildren, getLastNumber } from '../utils.js'
 
 let galleryDiv = document.querySelector('.gallery')
 
@@ -30,14 +31,7 @@ otherButton.addEventListener('click', function(event) {
     populateDOM(otherCharacters)
 })
 
-function getLastNumber(url) {
-    let end = url.lastIndexOf('/')
-    let start = end - 2
-    if (url.charAt(start) === '/') {
-        start++
-    }
-    return url.slice(start, end)
-}
+
 
 function removeChildren(element) {
     while (element.firstChild) {
