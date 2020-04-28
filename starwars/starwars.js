@@ -1,37 +1,71 @@
 import { films } from '../data/films.js'
 import { people } from '../data/people.js'
 
-console.log("Welcome to the JS!")
+let galleryDiv = document.querySelector('.gallery')
 
-console.log(document.querySelector('.heyo'))
+const maleCharacters = people.filter(person => person.gender === "male")
 
-let heyoDiv = document.querySelector('.heyo')
+const femaleCharacters = people.filter(person => person.gender === "female")
 
-let castList = document.createElement("ul")
+const otherCharacters = people.filter(
+    person =>
+     person.gender === "n/a" || 
+     person.gender === "none" || 
+     person.gender === "hermaphrodite",
+     )
 
-let counter = 1
+let maleButton = document.querySelector('#maleButton')
+let femaleButton = document.querySelector('#femaleButton')
+let otherButton = document.querySelector('#otherButton')
 
-people.forEach(person => {
-    let nameItem = document.createElement("li")
-    nameItem.textContent = person.name
-    castList.appendChild(nameItem)
-
-    let personAnchor = document.createElement("a")
-    personAnchor.href = '#'
-    let personImg = document.createElement("img")
-    personImg.src = `https://starwars-visualguide.com/assets/img/characters/${counter}.jpg`
-
-    personImg.addEventListener('error', (event) => {
-        personImg.hidden = true
-       //personImg.src = '../images/uvu.jpg'  
-    });
-    
-    personImg.addEventListener("click", function( event ) {
-    console.log('thanks for clicking me')
-    })
-    personAnchor.appendChild(personImg)
-    heyoDiv.appendChild(personAnchor)
-    counter++
+maleButton.addEventListener('click', function(event) {
+    populateDOM(maleCharacters)
 })
 
-heyoDiv.appendChild(castList)
+femaleButton.addEventListener('click', function(event) {
+    populateDOM(femaleCharacters)
+})
+
+otherButton.addEventListener('click', function(event) {
+    populateDOM(otherCharacters)
+})
+
+function getLastNumber(url) {
+    let end = url.lastIndexOf('/')
+    let start = end - 2
+    if (url.charAt(start) === '/') {
+        start++
+    }
+    return url.slice(start, end)
+}
+
+function removeChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }
+}
+
+function populateDOM(characters) {
+    removeChildren(galleryDiv)
+    characters.forEach(person => {
+        let imageNum = getLastNumber(person.url)
+        let personAnchor = document.createElement('a')
+        personAnchor.href = '#'
+        let personImg = document.createElement('img')
+        personImg.src = `https://starwars-visualguide.com/assets/img/characters/${imageNum}.jpg`
+
+        personImg.addEventListener('error', (event) => {
+            personImg.hidden = true
+            //personImg.src = '../images/uvu.jpg'  
+        })
+
+        personImg.addEventListener("click", function (event) {
+            console.log('thanks for clicking me')
+        })
+
+        personAnchor.appendChild(personImg)
+        galleryDiv.appendChild(personAnchor)
+    })
+}
+
+populateDOM(people)

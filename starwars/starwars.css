@@ -15,8 +15,13 @@ button {
 border-radius: 10px;    
 font-size:  larger;
 height: 3rem;
-background-color: wheat;
-color: violet;
+background-color: rgb(126, 195, 212);
+color: rgba(231, 149, 252, 0.897);
 font-weight: 800;
-
 }
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
