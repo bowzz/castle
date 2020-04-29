@@ -1,6 +1,7 @@
 .pokeContainer{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .scene {
@@ -32,7 +33,7 @@
     color: white;
     text-align: center;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 20px;
     backface-visibility: hidden;
   }
   
