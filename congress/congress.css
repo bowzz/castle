@@ -7,4 +7,33 @@
 
     .container {
         display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    
+    }
+
+    figcaption {
+        display: flex;
+        font-size: 1rem;
+        justify-content: space-evenly;
+    }
+
+    .fa-democrat {
+        color: blue;
+
+    }
+
+    .fa-republican {
+
+    color: red;
+}
+
+    .fa-star {
+        color: blueviolet;
+    }
+
+    .progressDiv { 
+        display: flex;
+        justify-content: center;
+        margin-left: 40px;
     }
