@@ -113,11 +113,12 @@ function getPokemonMoves(pokemon, levelLearnedAt) {
 }
 
 class Pokemon {
-    constructor(height, weight, name, abilities) {
+    constructor(height, weight, name, abilities, moves) {
         this.height = height;
         this.weight = weight;
         this.name = name
         this.abilities = abilities
+        this.moves = moves
         this.id = 900
     }
 }
@@ -127,7 +128,12 @@ function addPokemon() {
         {
             ability:
                 { name: 'Thunder Belly' }
-        }], [
+        },
+            {    ability:
+                { name: 'Lightning Boiz ' }
+    }
+        ],
+         [
         {
             move: {
                 name: "Breaking-Wind"
