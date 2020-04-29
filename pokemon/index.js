@@ -2,12 +2,12 @@
 let pokeContainer = document.querySelector('.pokeContainer')
 let startButton = document.querySelector('#startButton')
 startButton.addEventListener('click', () => {
-   loadPage()
+    loadPage()
 })
 
 let newButton = document.querySelector('#newButton')
 newButton.addEventListener('click', () => {
-   addPokemon()
+    addPokemon()
 })
 
 async function getAPIData(url) {
@@ -75,9 +75,9 @@ function populateCardFront(pokemon) {
 function getImageFileName(pokemon) {
     if (pokemon.id < 10) {
         return `00${pokemon.id}`
-    } else if (pokemon.id > 9 && pokemon.id <100) {
+    } else if (pokemon.id > 9 && pokemon.id < 100) {
         return `0${pokemon.id}`
-    } else return`pokeball`
+    } else return `pokeball`
 }
 
 
@@ -87,39 +87,46 @@ function getImageFileName(pokemon) {
 function populateCardBack(pokemon) {
     let cardBack = document.createElement('div')
     cardBack.className = 'card__face card__face--back'
-    cardBack.textContent = pokemon.stats[0].stat.name
+    let abilityList = document.createElement('ul')
+    abilityList.textContent = 'foo'
+    pokemon.abilities.forEach(ability => {
+        let abilityName = document.createElement('li')
+        abilityName.textContent = ability.ability.name
+        abilityList.appendChild(abilityName)
+
+    })
+
+let moveList = document.createElement('p')
+moveList.textContent = `Level 0 Moves: ${getPokemonMoves(pokemon, 0).length}`
+
+    cardBack.appendChild(abilityList)
+    cardBack.appendChild(moveList)
+   
     return cardBack
 }
 
-
-
-class Pokemon {
-    constructor(height, weight, name, stats) {
-      this.height = height;
-      this.weight = weight;
-      this.name = name
-      this.stats = stats
-      this.id = 900
-    }
-  }
-
-function addPokemon(){
-let newPokemon = new Pokemon(50,25,'Thoremon',[{stat: { name: 'Thunder Belly'}}])
-populatePokeCard(newPokemon)
+function getPokemonMoves(pokemon, levelLearnedAt) {
+   //console.log(`Name: ${pokemon.name} Number of Moves: ${pokemon.moves.length}`)
+   return pokemon.moves.filter(move => {
+       return (move.version_group_details[0].level_learned_at === levelLearnedAt)
+   })
 }
 
+class Pokemon {
+    constructor(height, weight, name, abilities) {
+        this.height = height;
+        this.weight = weight;
+        this.name = name
+        this.abilities = abilities
+        this.id = 900
+    }
+}
 
-
-{/* <div class="scene">
-  <div class="card">
-    <div class="card__face card__face--front">front</div>
-    <div class="card__face card__face--back"><div><p>Hi,I'm here on the back</p></div></div>
-  </div>
-</div>
-
-var card = document.querySelector('.card');
-card.addEventListener( 'click', function() {
-  card.classList.toggle('is-flipped');
-});
-
-*/}
+function addPokemon() {
+    let newPokemon = new Pokemon(50, 25, 'Thoremon', [
+        { 
+            ability: 
+            { name: 'Thunder Belly' }
+         }])
+    populatePokeCard(newPokemon)
+}

@@ -58,3 +58,7 @@ header {
     transform: rotateY(180deg);
   }
   
+  .card__face ul {
+      text-align: left;
+      list-style: none;
+  }
