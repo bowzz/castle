@@ -96,20 +96,20 @@ function populateCardBack(pokemon) {
 
     })
 
-let moveList = document.createElement('p')
-moveList.textContent = `Level 0 Moves: ${getPokemonMoves(pokemon, 0).length}`
+    let moveList = document.createElement('p')
+    moveList.textContent = `Level 0 Moves: ${getPokemonMoves(pokemon, 0).length}`
 
     cardBack.appendChild(abilityList)
     cardBack.appendChild(moveList)
-   
+
     return cardBack
 }
 
 function getPokemonMoves(pokemon, levelLearnedAt) {
-   //console.log(`Name: ${pokemon.name} Number of Moves: ${pokemon.moves.length}`)
-   return pokemon.moves.filter(move => {
-       return (move.version_group_details[0].level_learned_at === levelLearnedAt)
-   })
+    //console.log(`Name: ${pokemon.name} Number of Moves: ${pokemon.moves.length}`)
+    return pokemon.moves.filter(move => {
+        return (move.version_group_details[0].level_learned_at === levelLearnedAt)
+    })
 }
 
 class Pokemon {
@@ -124,9 +124,19 @@ class Pokemon {
 
 function addPokemon() {
     let newPokemon = new Pokemon(50, 25, 'Thoremon', [
-        { 
-            ability: 
-            { name: 'Thunder Belly' }
-         }])
+        {
+            ability:
+                { name: 'Thunder Belly' }
+        }], [
+        {
+            move: {
+                name: "Breaking-Wind"
+            },
+            version_group_details: [{
+                level_learned_at: 0
+            }
+            ]
+        }
+    ])
     populatePokeCard(newPokemon)
 }

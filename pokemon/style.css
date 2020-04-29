@@ -43,7 +43,7 @@ header {
     color: white;
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: .25rem;
     backface-visibility: hidden;
   }
   
