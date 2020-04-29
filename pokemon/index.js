@@ -5,6 +5,11 @@ startButton.addEventListener('click', () => {
    loadPage()
 })
 
+let newButton = document.querySelector('#newButton')
+newButton.addEventListener('click', () => {
+   addPokemon()
+})
+
 async function getAPIData(url) {
     try {
         const response = await fetch(url)
@@ -59,7 +64,10 @@ function populateCardFront(pokemon) {
     cardFront.textContent = `${pokemon.name} ${pokemon.id}`
     let frontImage = document.createElement('img')
     frontImage.src = `../images/${getImageFileName(pokemon)}.png`
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}`
     cardFront.appendChild(frontImage)
+    cardFront.appendChild(frontLabel)
     return cardFront
 }
 
@@ -69,7 +77,7 @@ function getImageFileName(pokemon) {
         return `00${pokemon.id}`
     } else if (pokemon.id > 9 && pokemon.id <100) {
         return `0${pokemon.id}`
-    }
+    } else return`pokeball`
 }
 
 
@@ -85,7 +93,20 @@ function populateCardBack(pokemon) {
 
 
 
+class Pokemon {
+    constructor(height, weight, name, stats) {
+      this.height = height;
+      this.weight = weight;
+      this.name = name
+      this.stats = stats
+      this.id = 900
+    }
+  }
 
+function addPokemon(){
+let newPokemon = new Pokemon(50,25,'Thoremon',[{stat: { name: 'Thunder Belly'}}])
+populatePokeCard(newPokemon)
+}
 
 
 
