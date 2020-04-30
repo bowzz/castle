@@ -38,3 +38,7 @@ font-size: 1.25 rem;
 li {
 list-style-type: none;
 }
+
+.shipView {
+    justify-content: space-evenly;
+}

@@ -1,6 +1,12 @@
 :root {
 box-sizing: border-box;
 background-color: #dfdfdf;
+justify-content: space-around;
+
+}
+
+h1 {
+  text-align: center;
 
 }
 
@@ -9,14 +15,17 @@ a > img {
 height: 12 rem;
 margin: 4px;
 }
+body {
 
+justify-content: center;
+}
 
 button { 
 border-radius: 10px;    
 font-size:  larger;
 height: 3rem;
-background-color: rgb(126, 195, 212);
-color: rgba(231, 149, 252, 0.897);
+background-color: white;;
+color: black;
 font-weight: 800;
 }
 
@@ -24,4 +33,8 @@ font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  #gallery {
+    justify-content: space-evenly;
   }
