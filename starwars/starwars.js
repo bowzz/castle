@@ -33,11 +33,11 @@ otherButton.addEventListener('click', function(event) {
 
 
 
-function removeChildren(element) {
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-      }
-}
+// function removeChildren(element) {
+//     while (element.firstChild) {
+//         element.removeChild(element.firstChild);
+//       }
+// }
 
 function populateDOM(characters) {
     removeChildren(galleryDiv)
