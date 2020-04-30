@@ -60,14 +60,16 @@ function populatePokeCard(singlePokemon) {
 
 function populateCardFront(pokemon) {
     let cardFront = document.createElement('div')
-    cardFront.className = 'card__face card__face--front'
-    cardFront.textContent = `${pokemon.name} ${pokemon.id}`
+    //cardFront.textContent = `${pokemon.name} ${pokemon.id}`
+    cardFront.className = 'card__face'// card__face--front'
     let frontImage = document.createElement('img')
-    frontImage.src = `../images/${getImageFileName(pokemon)}.png`
-    let frontLabel = document.createElement('p')
-    frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}`
+    frontImage.className = 'card__face'// card__face--front'
+    //frontImage.src = `../../images/${getImageFileName(pokemon)}.png`
+    frontImage.src = `../../images/pokemoncardback.png`
+    //let frontLabel = document.createElement('p')
+    //console.log(frontImage)
     cardFront.appendChild(frontImage)
-    cardFront.appendChild(frontLabel)
+    //cardFront.appendChild(frontLabel)
     return cardFront
 }
 
@@ -86,13 +88,24 @@ function getImageFileName(pokemon) {
 
 function populateCardBack(pokemon) {
     let cardBack = document.createElement('div')
+    //cardBack.textContent = `${pokemon.name} ${pokemon.id}`
     cardBack.className = 'card__face card__face--back'
+    let backImage = document.createElement('img')
+    backImage.className = 'backimage'
+    backImage.src = `../../images/${getImageFileName(pokemon)}.png`
+    cardBack.appendChild(backImage)
+
+    let backLabel = document.createElement('p')
+    backLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1)}`
+    cardBack.appendChild(backLabel)
     let abilityList = document.createElement('ul')
-    abilityList.textContent = 'foo'
+    // abilityList.textContent = 'foo'
+
     pokemon.abilities.forEach(ability => {
         let abilityName = document.createElement('li')
         abilityName.textContent = ability.ability.name
         abilityList.appendChild(abilityName)
+return cardBack
 
     })
 

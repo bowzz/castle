@@ -16,7 +16,6 @@ header {
 .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid #CCC;
     margin: 40px 0;
     perspective: 600px;
     border-radius: 30px;
@@ -37,13 +36,13 @@ header {
   
   .card__face {
     position: absolute;
-    width: 100%;
+
     height: 100%;
-    line-height: 260px;
-    color: white;
+    /* line-height: 260px; */
+    /* color: white;
     text-align: center;
     font-weight: bold;
-    font-size: .25rem;
+    font-size: .25rem; */
     backface-visibility: hidden;
   }
   
@@ -51,10 +50,20 @@ header {
     background: blue;
     border-radius: 30px;
   }
+
+  .backimage {
+   width: 50%;
+   margin-left: 25%;
+  }
   
   .card__face--back {
-    border-radius: 30px;
-    background: blue;
+    padding-top: 10px;
+  text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    border-radius: 10px;
+    background: orange;
     transform: rotateY(180deg);
   }
   
